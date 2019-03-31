@@ -1,0 +1,52 @@
+/*1.调整盒子大小*/
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Arial, sans-serif;
+  font-size: 625%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/*2.删除边距和填充*/
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select {
+  margin: 0;
+  padding: 0;
+}
+
+/*3.列表*/
+ul, ol, dl {
+  list-style: none;
+}
+
+/*4.表单和按钮*/
+input, textarea, select, button {
+  outline: none;
+}
+
+/*5.字体*/
+body {
+  font-size: 0.12rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+i, em {
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+  font-weight: 100;
+}
+
+[hidden] {
+  display: none;
+}
