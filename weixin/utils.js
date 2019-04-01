@@ -74,9 +74,6 @@ export class WxApiUtils {
     })
   }
 
-
-  /*===============导航条==============*/
-
   getNavigationBarHeight() {
     const app = getApp();
     let statusBarHeight = app.globalData.statusBarHeight;
@@ -174,7 +171,6 @@ export class WxApiUtils {
     return paramsStr;
   }
 
-
   navigateBack(delta) {
     var pages = getCurrentPages();
     if (pages.length === 1) {
@@ -184,83 +180,6 @@ export class WxApiUtils {
         delta: delta
       })
     }
-  }
-
-  /*===============导航条==============*/
-
-
-  /*===============落地页的访问状态start==============*/
-  getVisiteLandPageState() {
-    let pageState = wx.getStorageSync('landpagestate');
-    if (pageState == '' || pageState == undefined) {
-      pageState = {
-        'cglresult_land': true,
-        'cglsearch_land': true,
-        'index_land': true,
-        'tmregister_land': true,
-        'wxpay_land': true,
-        'gnsbcx_land': true,
-        'mfzcfx_land': true,
-
-
-        'rgccfw_land': true,
-        'jisu1_land': true,
-        'jisu3_land': true,
-        'comfirmorder1_land': true,
-        'comfirmorder2_land': true,
-        'comfirmorder3_land': true,
-        'payresult1_land': true,
-        'payresult2_land': true,
-        'payresult3_land': true,
-        'paycomplete1_land': true,
-        'paycomplete2_land': true,
-        'paycomplete3_land': true,
-        'protocol_land': true,
-      }
-      wx.setStorageSync('landpagestate', pageState);
-    }
-    return pageState;
-  }
-
-  setLandPageVisiteState(key) {
-    let pageState = this.getVisitePageState();
-    pageState[key] = false;
-    wx.setStorageSync('landpagestate', pageState);
-  }
-
-  /*===============落地页的访问状态end==============*/
-
-
-  /*===============子页的访问状态start==============*/
-  getVisitePageState() {
-    let pageState = wx.getStorageSync('pagestate');
-    if (pageState == '' || pageState == undefined) {
-      pageState = {
-        'cglresult': true,
-        'cglsearch': true,
-        'index': true,
-        'tmregister': true,
-        'wxpay': true,
-        'gnsbcx': true,
-        'mfzcfx': true,
-
-        'rgccfw': true,
-        'jisu1': true,
-        'jisu3': true,
-        'comfirmorder1': true,
-        'comfirmorder2': true,
-        'comfirmorder3': true,
-        'payresult1': true,
-        'payresult2': true,
-        'payresult3': true,
-        'paycomplete1': true,
-        'paycomplete2': true,
-        'paycomplete3': true,
-        'protocol': true,
-      }
-      wx.setStorageSync('pagestate', pageState);
-    }
-    return pageState;
   }
 
 }
